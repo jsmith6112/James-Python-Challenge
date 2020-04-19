@@ -4,22 +4,16 @@
 import os
 import csv
  
-# Variables
-#total_mos = 
-# total_pnl
-#Profit_incr_Max 
-#Profit_incr_date
-#Monthly_Chg
-Month_Count=0
-#Profit_Decrease_Max
-#Profit_Decrease_date
-#Total
-PNL = 0
+Votes_Cast=0
+Correy_Count=0
+
+
+
 
 # Set Path For File
 
 
-csvpath= os.path.join('Resources','budget_data.csv')
+csvpath= os.path.join('Resources','election_data.csv')
 
 with open(csvpath) as csvfile:
 
@@ -29,35 +23,37 @@ with open(csvpath) as csvfile:
     print(csvreader)
 
     # Read the header row first (skip this step if there is now header)
-    csv_header = next(csvreader)
+ #   csv_header = next(csvreader)
     #print(f"CSV Header: {csv_header}")
   
-    PNL=0
+  #  PNL=0
 
     # Read each row of data after the header
     for row in csvreader:
-        Date = row[0]
-        ProfitLoss = float(row[1])
-        PNL = PNL + ProfitLoss
-        Month_Count = Month_Count +1
-        PNL_Delta = PNL
-        #print(f"{Date},{ProfitLoss}")
-
-print("*****************************")
-print("")
-
-print(f"Total Months: {Month_Count}")
-print(f"The Total Profit is {PNL}")
-
-print("")
-print("*****************************")
-
- ###       if row > 1:
- #
- #          PNL_Delta = PNL(row)-PNL(row-1)
- #         ProfitList = ['Date','ProfitLoss','PNL_Delta']
- #         #print(row)
+        Candidate = row[2]
+        County = row[1]
+        Votes_Cast = Votes_Cast + 1
+        if Candidate == "Correy":
+            Correy_Count = Correy_Count + 1
+        elif Candidate =="Khan":
+            Khan_Count = Khan_Count +1
+        elif Candidate =="Li":
+            Li_Count = Li_Count+1
+        else OT_Count = OT Count +1
         
+        
+print(Correy_Count)
+
+
+print("*****************************")
+print("")
+print(f"Total Votes: {Votes_Cast}")
+print(f"Votes for Correy: {Correy_Count}")
+print(f"Insert count")
+
+print("")
+print("*****************************")
+
         
 
     
