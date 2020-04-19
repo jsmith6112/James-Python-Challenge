@@ -14,8 +14,10 @@ with open(cereal_csv) as csvfile:
     for row in csvreader:
         Name = row[0]
         Fiber = float(row[7])
-    
+        Sugar = float(row[9])
+        Calor = float(row[3])
 # Set Criteria for data to share and print to terminal    
         if Fiber >=5:
-            print(f"{Name}, {Fiber}")
-        
+            
+            print(f"{Name} contains: {Fiber} g Fiber {Sugar} g Sugar & {Calor} Calories")
+            print("****************************************************************")
